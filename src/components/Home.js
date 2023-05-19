@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import axios from "axios";
 import { useState } from "react";
+import { secrets } from "../secret/secret.js";
 import "./Home.css";
 import * as AiIcons from "react-icons/ai";
 
@@ -17,7 +18,7 @@ function Home() {
 
   const handleClick = () => {
     if (name !== "") {
-      const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${name}&appid=0ac0ea6ae54ff3f6a04994129fd05d88&units=metric`;
+      const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${name}&appid=${secrets.api_key}&units=metric`;
       axios
         .get(apiUrl)
         .then((res) => {
