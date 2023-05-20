@@ -18,7 +18,7 @@ function Home() {
 
   const handleClick = () => {
     if (name !== "") {
-      const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${name}&appid=${secrets.api_key}&units=metric`;
+      const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${name}&appid=${secrets[0].api_key}&units=metric`;
       axios
         .get(apiUrl)
         .then((res) => {
